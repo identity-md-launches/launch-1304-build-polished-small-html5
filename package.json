@@ -1,0 +1,25 @@
+{
+  "name": "lily-hop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A self-contained arcade pond game for the Pepe2Pepe browser game launchpad.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "preview": "node scripts/serve.mjs",
+    "test": "npm run test:engine && npm run test:browser",
+    "test:engine": "node --experimental-strip-types --test test/*.test.ts",
+    "test:browser": "node test/browser.test.mjs",
+    "test:a11y": "node test/accessibility.test.mjs"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "esbuild": "0.28.2",
+    "playwright": "1.64.0",
+    "typescript": "7.0.2"
+  }
+}

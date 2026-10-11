@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f5f1e6" />
+    <title>Lily Hop — A little pond adventure</title>
+    <meta name="description" content="A quick arcade pond run. Hop between lily pads, collect coins, and dodge the beetles. Three lives. Sixty seconds. Play Lily Hop." />
+    <meta property="og:title" content="Lily Hop" />
+    <meta property="og:description" content="Hop across the pond, dodge the hazards, and bring home the coins." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./cover.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <script defer src="./assets/main.js"></script>
+  </head>
+  <body>
+    <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></symbol>
+        <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" /></symbol>
+        <symbol id="i-sound" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5ZM15 8c3 2 3 6 0 8m3-11c5 4 5 10 0 14" /></symbol>
+        <symbol id="i-mute" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm5 4 6 6m0-6-6 6" /></symbol>
+        <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 .5c0 2-2.5 2-2.5 4M12 17h.01" /></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6" /></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6M12 2v3" /></symbol>
+        <symbol id="i-cup" viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0V4ZM7 6H4v2a4 4 0 0 0 4 4M17 6h3v2a4 4 0 0 1-4 4M12 14v5M8 21h8" /></symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20 3.8 12A5 5 0 0 1 11 5l1 1 1-1a5 5 0 0 1 7.2 7Z" /></symbol>
+        <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="6"/><path d="M12 9v6" /></symbol>
+        <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4C8 2 2 8 5 15c7 7 17 2 15-11ZM4 21 16 9" /></symbol>
+      </defs>
+    </svg>
+    <a class="skip-link" href="#game-canvas">Skip to game</a>
+    <div class="site-wrap">
+      <header class="site-header">
+        <div class="brand">
+          <img src="./favicon.svg" width="40" height="40" alt="" />
+          <span>Pepe2Pepe<span class="brand-category">Pondside arcade</span></span>
+        </div>
+        <div class="header-actions">
+          <button id="help-button" aria-label="How to play" class="quiet-button" type="button"><svg class="icon"><use href="#i-help" /></svg><span>How to play</span></button>
+          <button id="sound-button" class="quiet-button sound-button" type="button" aria-pressed="false" aria-label="Sound off" title="Turn sound on"><svg class="icon"><use id="sound-icon" href="#i-mute" /></svg><span id="sound-label">Sound off</span></button>
+        </div>
+      </header>
+      <main>
+        <section class="game-intro" aria-labelledby="game-title">
+          <div><h1 id="game-title">Lily Hop<span class="title-spark" aria-hidden="true">✳</span></h1><p>A little pond. A 60-second adventure.</p></div>
+          <div class="best-score"><svg class="icon"><use href="#i-cup" /></svg><div><span id="best-label">Personal best</span><strong id="best-value">0</strong></div></div>
+        </section>
+        <section id="game-shell" class="game-shell" data-phase="title" aria-label="Lily Hop game">
+          <div class="game-toolbar">
+            <div class="pond-status"><span class="status-dot" aria-hidden="true"></span><span id="pond-status">The quiet pond</span></div>
+            <div class="stats" role="group" aria-label="Round statistics">
+              <div class="stat score-stat"><svg class="icon coin-icon"><use href="#i-coin" /></svg><div><span>Score</span><strong id="score-value">000</strong></div></div>
+              <div class="stat time-stat"><svg class="icon"><use href="#i-clock" /></svg><div><span>Time</span><strong><span id="time-value">60</span><span class="stat-unit">s</span></strong></div></div>
+              <div class="stat lives-stat"><span class="stat-label">Lives</span><span id="lives-value" class="hearts" role="img" aria-label="3 lives remaining"><svg class="icon"><use href="#i-heart" /></svg><svg class="icon"><use href="#i-heart" /></svg><svg class="icon"><use href="#i-heart" /></svg></span></div>
+            </div>
+            <button id="pause-button" class="icon-button" type="button" aria-label="Pause game" title="Pause game (P)" disabled><svg class="icon"><use href="#i-pause" /></svg></button>
+          </div>
+          <div class="pond-stage">
+            <canvas id="game-canvas" width="900" height="620" tabindex="0" role="img" aria-label="Lily Hop pond. Green lily pads are safe. Gold coins give 10 points. Avoid water gaps and moving red beetles." aria-describedby="game-directions">Your browser needs canvas to play Lily Hop. Try a recent browser with JavaScript enabled.</canvas>
+            <div id="overlay" class="game-overlay">
+              <div class="overlay-content">
+                <span id="overlay-tag" class="pond-tag"><svg class="icon"><use href="#i-leaf" /></svg>One happy little escape</span>
+                <h2 id="overlay-heading">Make a<br />little splash.</h2>
+                <p id="overlay-message">Hop across the lilies, scoop up coins,<br class="desktop-break" /> and stay one jump ahead.</p>
+                <div id="round-result" class="round-result" hidden><span>Final score</span><strong id="result-score">0</strong><span id="result-note"></span></div>
+                <button id="play-button" class="primary-button" type="button"><span id="play-label">Play Lily Hop</span><svg class="icon"><use href="#i-arrow" /></svg></button>
+                <span id="overlay-hint" class="overlay-hint">60 seconds · 3 lives · All yours</span>
+              </div>
+            </div>
+            <span id="game-feedback" class="game-feedback" role="status" aria-live="off" hidden></span>
+          </div>
+          <div class="game-controls">
+            <div id="game-directions" class="keyboard-hint"><div class="key-cluster" aria-hidden="true"><kbd>↑</kbd><span><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd></span></div><p><strong>Little hops. Big possibilities.</strong><span><span class="desktop-directions">Arrow keys or WASD to hop. </span><span class="mobile-directions">Use the arrows to hop. </span><kbd>P</kbd> to pause.</span></p></div>
+            <div class="touch-controls" role="group" aria-label="Hop controls"><button id="move-left" class="direction-button" type="button" aria-label="Hop left" data-direction="left" disabled><svg class="icon"><use href="#i-arrow" /></svg></button><div class="vertical-directions"><button id="move-up" class="direction-button" type="button" aria-label="Hop up" data-direction="up" disabled><svg class="icon"><use href="#i-arrow" /></svg></button><button id="move-down" class="direction-button" type="button" aria-label="Hop down" data-direction="down" disabled><svg class="icon"><use href="#i-arrow" /></svg></button></div><button id="move-right" class="direction-button" type="button" aria-label="Hop right" data-direction="right" disabled><svg class="icon"><use href="#i-arrow" /></svg></button></div>
+            <div class="round-note"><span class="mini-dot" aria-hidden="true"></span>Single player<span aria-hidden="true">·</span>Instant play</div>
+          </div>
+        </section>
+        <div class="pond-rules" role="group" aria-label="Quick gameplay guide">
+          <div><span class="rule-icon leaf-rule"><svg class="icon"><use href="#i-leaf" /></svg></span><p><strong>Find your footing</strong><span>Stick to the lily pads.</span></p></div>
+          <div><span class="rule-icon coin-rule"><svg class="icon"><use href="#i-coin" /></svg></span><p><strong>Make every coin count</strong><span>Each golden coin earns 10 points.</span></p></div>
+          <div><span class="rule-icon heart-rule"><svg class="icon"><use href="#i-heart" /></svg></span><p><strong>Keep your three lives</strong><span>Dodge beetles. Mind the gaps.</span></p></div>
+        </div>
+      </main>
+      <footer><span>A small game for a little break.</span><span>Made for <strong>Pepe2Pepe</strong><svg class="icon"><use href="#i-leaf" /></svg></span></footer>
+    </div>
+    <dialog id="help-dialog" aria-labelledby="help-title">
+      <div class="dialog-heading"><h2 id="help-title">A frog’s field guide</h2><button id="close-help" class="icon-button" type="button" aria-label="Close how to play"><svg class="icon"><use href="#i-close" /></svg></button></div>
+      <p>Bring home as many coins as you can in 60 seconds.</p>
+      <ol class="help-steps"><li><strong>Hop, one pad at a time.</strong><span>Use the arrow keys, WASD, or the on-screen arrows. Each press moves one space.</span></li><li><strong>Follow the gold.</strong><span>Each coin is worth 10 points. New coins appear as you collect them.</span></li><li><strong>Look before you leap.</strong><span>Water gaps and moving red beetles cost a life. You return to the starting pad with a brief protective ring.</span></li></ol>
+      <div class="help-tip"><svg class="icon"><use href="#i-leaf" /></svg><p>The top and bottom rows are beetle-free. Take a breath, then plan your next hop.</p></div>
+      <p class="help-footnote">Press <kbd>P</kbd> or <kbd>Esc</kbd> to pause. Opening this guide or leaving the tab also pauses your round. Sound starts off; turn it on anytime.</p>
+      <button id="help-done" class="primary-button" type="button">Got it<svg class="icon"><use href="#i-arrow" /></svg></button>
+    </dialog>
+    <p id="announcer" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
+    <noscript><p class="no-script">Lily Hop needs JavaScript to run. Enable it, then reload to play.</p></noscript>
+  </body>
+</html>

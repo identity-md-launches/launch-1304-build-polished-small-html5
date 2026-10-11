@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Lily Hop</title>
+  <desc id="description">A cheerful green frog sits on a lily pad in a rich teal pond, surrounded by gold coins and water lilies. A quick arcade pond run for Pepe2Pepe.</desc>
+  <defs>
+    <linearGradient id="pond" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#143e3b"/>
+      <stop offset=".7" stop-color="#20554e"/>
+      <stop offset="1" stop-color="#1a4842"/>
+    </linearGradient>
+    <g id="pad">
+      <ellipse cy="7" rx="63" ry="37" fill="#102e2c" opacity=".25"/>
+      <path d="M3 0 58 10C49 29 14 35-18 29S-65 7-57-11-22-34 12-29 58-11 60-2Z" fill="#aed187"/>
+      <path d="M-50-9C-41-24-16-29 9-25" fill="none" stroke="#d0e3a1" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+      <path d="M-2 0-24-20M-2 0-45 7M-2 0 11 24M-2 0 34-14" fill="none" stroke="#4f8061" stroke-width="1.4" opacity=".3"/>
+    </g>
+    <g id="coin">
+      <circle cy="3" r="21" fill="#bd853c"/>
+      <circle r="21" fill="#f1c65f"/>
+      <circle r="15" fill="none" stroke="#ffe7a3" stroke-width="2"/>
+      <path d="M0-7V7" stroke="#a97931" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g id="lotus">
+      <use href="#pad" transform="translate(0 20) scale(.8)"/>
+      <path d="M0 14C-30 8-44-14-42-25-17-23-2-12 0 14" fill="#e4b6a9"/>
+      <path d="M0 14C30 8 44-14 42-25 17-23 2-12 0 14" fill="#e4b6a9"/>
+      <path d="M0 14C-28 0-27-26-17-40 0-33 8-9 0 14" fill="#f5d5bb"/>
+      <path d="M0 14C28 0 27-26 17-40 0-33-8-9 0 14" fill="#f5d5bb"/>
+      <path d="M0 14C-19-4-12-32 0-45 12-32 19-4 0 14" fill="#efd0b5"/>
+      <ellipse cy="10" rx="12" ry="5" fill="#edc766"/>
+    </g>
+    <g id="frog">
+      <ellipse cx="-30" cy="27" rx="19" ry="10" fill="#82b653"/>
+      <ellipse cx="30" cy="27" rx="19" ry="10" fill="#82b653"/>
+      <ellipse cx="-29" cy="31" rx="20" ry="7" fill="#bde477"/>
+      <ellipse cx="29" cy="31" rx="20" ry="7" fill="#bde477"/>
+      <ellipse cy="9" rx="37" ry="33" fill="#82b653"/>
+      <ellipse cy="3" rx="36" ry="33" fill="#bde477"/>
+      <ellipse cy="16" rx="25" ry="16" fill="#d6ee9c"/>
+      <ellipse cx="-22" cy="-24" rx="17" ry="18" fill="#82b653"/>
+      <ellipse cx="22" cy="-24" rx="17" ry="18" fill="#82b653"/>
+      <ellipse cx="-22" cy="-26" rx="16" ry="17" fill="#bde477"/>
+      <ellipse cx="22" cy="-26" rx="16" ry="17" fill="#bde477"/>
+      <ellipse cx="-22" cy="-27" rx="11" ry="12" fill="#f7f4df"/>
+      <ellipse cx="22" cy="-27" rx="11" ry="12" fill="#f7f4df"/>
+      <ellipse cx="-20" cy="-26" rx="5" ry="6.5" fill="#173e35"/>
+      <ellipse cx="24" cy="-26" rx="5" ry="6.5" fill="#173e35"/>
+      <circle cx="-21" cy="-29" r="1.8" fill="#fff"/>
+      <circle cx="23" cy="-29" r="1.8" fill="#fff"/>
+      <ellipse cx="-24" cy="2" rx="6" ry="3.5" fill="#dcaa76" opacity=".7"/>
+      <ellipse cx="24" cy="2" rx="6" ry="3.5" fill="#dcaa76" opacity=".7"/>
+      <circle cx="-6" cy="-4" r="1.6" fill="#173e35"/>
+      <circle cx="6" cy="-4" r="1.6" fill="#173e35"/>
+      <path d="M-13 6Q0 19 13 6" fill="none" stroke="#173e35" stroke-width="2.6" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="23" rx="6" ry="9" fill="#bde477"/>
+      <ellipse cx="20" cy="23" rx="6" ry="9" fill="#bde477"/>
+    </g>
+    <clipPath id="frame"><rect x="24" y="24" width="1152" height="582" rx="30"/></clipPath>
+  </defs>
+  <rect width="1200" height="630" fill="#f5f1e6"/>
+  <g clip-path="url(#frame)">
+    <rect x="24" y="24" width="1152" height="582" fill="url(#pond)"/>
+    <path d="M561 0C873 49 770 235 1200 278V0" fill="#2b6054" opacity=".45"/>
+    <path d="M590 630C753 394 843 646 1210 388V640" fill="#2b6054" opacity=".5"/>
+    <g fill="none" stroke="#78a991" stroke-width="2" stroke-linecap="round" opacity=".34">
+      <path d="M702 152c24-10 55-10 79-1m-72 12c18 5 43 5 61 0"/>
+      <path d="M965 489c53 20 117 12 143-2m-411-60c9 22 70 40 114 40m135-13c40-7 75-21 91-39"/>
+      <path d="M76 542c39 10 81 9 111-2m890-359c22 7 44 8 66 0"/>
+      <ellipse cx="881" cy="397" rx="175" ry="74"/>
+      <path d="M701 398c-3-42 66-82 151-87m64 1c72 8 130 35 145 66"/>
+    </g>
+    <g fill="#bfd39b" opacity=".34">
+      <circle cx="671" cy="246" r="2"/><circle cx="752" cy="84" r="2"/><circle cx="946" cy="101" r="3"/>
+      <circle cx="1083" cy="285" r="2"/><circle cx="995" cy="548" r="2"/><circle cx="709" cy="534" r="3"/>
+      <circle cx="570" cy="121" r="2"/><circle cx="1117" cy="400" r="2"/><circle cx="592" cy="554" r="2"/>
+    </g>
+    <use href="#pad" transform="translate(1001 151) scale(.76) rotate(-20)"/>
+    <use href="#coin" transform="translate(1000 129) scale(.86)"/>
+    <use href="#pad" transform="translate(727 492) scale(.8) rotate(12)"/>
+    <use href="#coin" transform="translate(727 465) scale(.9)"/>
+    <use href="#lotus" transform="translate(1101 468) rotate(10) scale(.85)"/>
+    <use href="#lotus" transform="translate(668 326) rotate(-17) scale(.68)"/>
+    <use href="#pad" transform="translate(882 382) scale(2.65) rotate(8)"/>
+    <ellipse cx="885" cy="385" rx="76" ry="24" fill="#49775a" opacity=".35"/>
+    <use href="#frog" transform="translate(884 324) scale(3.02)"/>
+    <g stroke="#c3d3a0" stroke-width="2.3" stroke-linecap="round" opacity=".85">
+      <path d="M756 238h16m-8-8v16M1041 328h12m-6-6v12M901 171h10m-5-5v10"/>
+    </g>
+    <g fill="#719877">
+      <path d="M1148 619c-54-46-67-105-58-129 14 24 45 82 58 129"/>
+      <path d="M1151 619c-19-70-9-129 11-159 4 37 1 103-11 159"/>
+      <path d="M1154 619c13-64 47-115 77-128-11 36-49 95-77 128"/>
+      <path d="M30 39c29 43 31 91 16 125C38 129 29 73 30 39" opacity=".6"/>
+    </g>
+    <g font-family="Arial, Helvetica, sans-serif">
+      <rect x="83" y="91" width="187" height="40" rx="20" fill="#f5f1e6" fill-opacity=".1" stroke="#7a9b80" stroke-opacity=".4"/>
+      <circle cx="106" cy="111" r="5" fill="#bde477"/>
+      <text x="121" y="117" font-size="16" font-weight="600" fill="#e1e8ca">Pepe2Pepe arcade</text>
+      <text x="78" y="264" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="700" letter-spacing="-5" fill="#f5f1e6">Lily Hop</text>
+      <text x="84" y="322" font-size="27" fill="#d5dfc7">Make a little splash.</text>
+      <text x="84" y="371" font-size="21" fill="#b4ccba">Hop across the pond. Bring home the coins.</text>
+      <rect x="83" y="437" width="318" height="59" rx="18" fill="#bde477"/>
+      <text x="108" y="475" font-size="20" font-weight="700" fill="#173e35">60 seconds of pond-side joy</text>
+      <text x="84" y="553" font-size="16" fill="#b4ccba">One frog · Three lives · Play anywhere</text>
+    </g>
+  </g>
+</svg>
